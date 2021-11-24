@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+    int num;
+    float cgpa[100], highCGPA, lowCGPA, diff = 0;
+
+    printf("How many students CGPA you want to input: ");
+    scanf("%d", &num);
+
+    printf("\nEnter %d students CGPA: ", num);
+
+    for(int i=0; i<num; i++)
+    {
+        scanf("%f", &cgpa[i]);
+    }
+
+    highCGPA = cgpa[0];
+    lowCGPA = cgpa[0];
+
+    for(int i=1; i<num; i++)
+    {
+        if(highCGPA < cgpa[i])
+        {
+            highCGPA = cgpa[i]; //highest cgpa
+        }
+        if(lowCGPA > cgpa[i])
+        {
+            lowCGPA = cgpa[i];
+        }
+    }
+
+    diff = (highCGPA - lowCGPA);
+
+    printf("\nDifference between highest CGPA and lowest CGPA: %.1f\n", diff);
+
+    //getch();
+
+    return 0;
+}
